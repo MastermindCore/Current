@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  
+  <title>Environment Committee Project</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://fonts.googleapis.com/css?family=Mansalva|Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
@@ -18,28 +18,283 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
+    /* Professional Font Styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .text-cursive {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 700;
+    }
+
+    /* FIX FOR HERO IMAGE BEING CUT OFF */
+    .owl-carousel-wrapper {
+      position: relative;
+      min-height: 700px;
+      overflow: visible;
+      width: 100%;
+    }
+
+    .owl-carousel.owl-1 {
+      height: 100%;
+    }
+
+    .ftco-cover-1 {
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 700px;
+    }
+
+    .owl-carousel .owl-stage-outer,
+    .owl-carousel .owl-stage,
+    .owl-carousel .owl-item {
+      height: 100%;
+    }
+
+    .owl-carousel .owl-item .ftco-cover-1 {
+      height: 100%;
+      min-height: 700px;
+    }
+
+    .overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    /* Hero Section Improvements */
+    .box-92819 {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      right: 0;
+      transform: translate(-50%,-50%);
+      z-index: 10;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .box-92819 h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      padding: 14px 32px;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      padding: 14px 32px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background: white;
+      color: #007bff;
+      transform: translateY(-2px);
+    }
+
+    /* Blog Post Card Improvements */
     .blog-post-card {
-      background: #fff; border-radius: 10px; overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: 0.3s ease; height: 100%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      height: 100%;
     }
-    .blog-post-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-    .blog-image-container { position: relative; height: 250px; overflow: hidden; }
-    .blog-image { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
-    .blog-post-card:hover .blog-image { transform: scale(1.05); }
-    .blog-date { position: absolute; top: 20px; left: 20px; background: #007bff; color: white;
-      width: 60px; height: 60px; border-radius: 50%; display: flex; flex-direction: column;
-      justify-content: center; align-items: center; z-index: 2;
+
+    .blog-post-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
-    .blog-date-day { font-size: 18px; font-weight: bold; }
-    .blog-date-month { font-size: 12px; text-transform: uppercase; }
-    .blog-content { padding: 25px; }
-    .blog-meta { color: #007bff; font-size: 14px; margin-bottom: 10px; display: block; letter-spacing: 1px; }
-    .blog-title { font-size: 20px; }
-    .blog-title a { color: #333; text-decoration: none; }
-    .blog-title a:hover { color: #007bff; }
-    .blog-excerpt { color: #666; line-height: 1.6; margin-bottom: 20px; }
-    .blog-read-more { color: #007bff; font-weight: 500; display: inline-flex; align-items: center; }
-    .blog-read-more:hover i { transform: translateX(5px); }
+
+    .blog-image-container {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s ease;
+    }
+
+    .blog-post-card:hover .blog-image {
+      transform: scale(1.08);
+    }
+
+    .blog-date {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #007bff;
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+    }
+
+    .blog-date-day {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .blog-date-month {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .blog-content {
+      padding: 28px;
+    }
+
+    .blog-meta {
+      color: #007bff;
+      font-size: 13px;
+      margin-bottom: 12px;
+      display: block;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .blog-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .blog-title a {
+      color: #222;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .blog-title a:hover {
+      color: #007bff;
+    }
+
+    .blog-excerpt {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .blog-read-more {
+      color: #007bff;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .blog-read-more:hover {
+      color: #0056b3;
+      gap: 10px;
+    }
+
+    /* Stats Section */
+    .counter {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      color: #007bff;
+    }
+
+    /* Navigation */
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    /* Feature Cards */
+    .feature-29012 h3 {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    /* Headings */
+    .heading-20219 .title {
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    /* Volunteers Section */
+    .person-29191 h3 {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    
   </style>
 </head>
 
@@ -67,7 +322,7 @@
             <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
               <li class="active"><a href="index.html" class="nav-link">Home</a></li>
               <li><a href="about.html" class="nav-link">About Us</a></li>
-              <li><a href="causes.html" class="nav-link">Our Causes</a></li>
+              <li><a href="impact.html" class="nav-link">Our Impact</a></li>
               <li><a href="blog.html" class="nav-link">Blog</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -85,7 +340,12 @@
     <div class="owl-carousel-wrapper">
       <div class="box-92819">
         <h1 class="text-white mb-3">Join The Movement To Build a Sustainable Future</h1>
-        <p><a href="#" class="btn btn-primary py-3 px-4 rounded-0">Donate Now</a></p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary py-3 px-4 rounded">Donate Now</a>
+          <a href="downloads.html" class="btn btn-outline-light py-3 px-4 rounded">
+            <i class="icon-download mr-2"></i>Download Resources
+          </a>
+        </div>
       </div>
 
       <div class="owl-carousel owl-1">
@@ -98,52 +358,49 @@
     <div class="container">
       <div class="feature-29192-wrap d-md-flex" style="margin-top:-20px; position: relative; z-index: 2;">
         <a href="#" class="feature-29192 overlay-danger" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80');">
-          <div class="text"><span class="meta">Livelihood</span><h3 class="text-cursive text-white h1">Livelihood</h3></div>
+          <div class="text"><span class="meta">Livelihood</span><h3 class="text-white h1" style="font-weight: 700;">Livelihood</h3></div>
         </a>
         <a class="feature-29192 overlay-success" style="background-image:url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80');">
-          <div class="text"><span class="meta">Health</span><h3 class="text-cursive text-white h1">Natural Remedies</h3></div>
+          <div class="text"><span class="meta">Health</span><h3 class="text-white h1" style="font-weight: 700;">Natural Remedies</h3></div>
         </a>
         <div class="feature-29192 overlay-warning" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80');">
-          <div class="text"><span class="meta">School</span><h3 class="text-cursive text-white h1">New Class Rooms</h3></div>
+          <div class="text"><span class="meta">School</span><h3 class="text-white h1" style="font-weight: 700;">New Class Rooms</h3></div>
         </div>
       </div>
     </div>
-        <!-- STATISTICS SECTION -->
+
+    <!-- STATISTICS SECTION -->
     <div class="site-section bg-light" id="stats-section">
       <div class="container">
-
         <div class="row mb-5 text-center">
           <div class="col-md-12">
             <div class="heading-20219">
-              <h2 class="title text-cursive">Our Impact in Numbers</h2>
+              <h2 class="title">Our Impact in Numbers</h2>
             </div>
           </div>
         </div>
 
         <div class="row justify-content-center">
-
           <div class="col-md-3 col-6 mb-4 text-center">
             <h2 class="counter" data-count="3500">0</h2>
-            <p class="text-muted">Trees Planted</p>
+            <p class="text-muted" style="font-weight: 500;">Trees Planted</p>
           </div>
 
           <div class="col-md-3 col-6 mb-4 text-center">
             <h2 class="counter" data-count="120">0</h2>
-            <p class="text-muted">Volunteers</p>
+            <p class="text-muted" style="font-weight: 500;">Volunteers</p>
           </div>
 
           <div class="col-md-3 col-6 mb-4 text-center">
             <h2 class="counter" data-count="24">0</h2>
-            <p class="text-muted">Projects Completed</p>
+            <p class="text-muted" style="font-weight: 500;">Projects Completed</p>
           </div>
 
           <div class="col-md-3 col-6 mb-4 text-center">
             <h2 class="counter" data-count="15000">0</h2>
-            <p class="text-muted">Lives Impacted</p>
+            <p class="text-muted" style="font-weight: 500;">Lives Impacted</p>
           </div>
-          
         </div>
-
       </div>
     </div>
 
@@ -153,7 +410,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <div class="heading-20219 text-center mb-5">
-              <h2 class="title text-cursive">Our Volunteers</h2>
+              <h2 class="title">Our Volunteers</h2>
             </div>
           </div>
         </div>
@@ -172,7 +429,8 @@
               <p class="text-muted">Donor</p>
             </div>
           </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
+
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="person-29191 text-center">
               <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" class="img-fluid mb-4 rounded-circle">
               <div class="social-links mb-4">
@@ -199,10 +457,10 @@
               <p class="text-muted">Coordinator</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
+
     <div class="site-section bg-primary">
       <div class="container">
         <div class="row align-items-center">
@@ -210,8 +468,8 @@
             <div class="row mb-5">
               <div class="col-md-7">
                 <div class="heading-20219">
-                  <h2 class="title text-white mb-4 text-cursive">Why Choose Us</h2>
-                  <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt ipsam repellendus voluptatum, totam magni iusto numquam quo eos dolor perferendis.</p>
+                  <h2 class="title text-white mb-4">Why Choose Us</h2>
+                  <p class="text-white">We are committed to making a lasting impact on our environment and communities through sustainable practices and collaborative action.</p>
                 </div>
               </div>
             </div>
@@ -220,8 +478,8 @@
                 <div class="feature-29012 d-flex">
                   <div class="number mr-4"><span>1</span></div>
                   <div>
-                    <h3>Odit Reiciendis</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi id sint explicabo odit reiciendis eaque accusamus labore necessitatibus.</p>
+                    <h3>Community Focused</h3>
+                    <p>We work directly with local communities to ensure sustainable and meaningful environmental solutions that benefit everyone.</p>
                   </div>
                 </div>
               </div>
@@ -229,8 +487,8 @@
                 <div class="feature-29012 d-flex">
                   <div class="number mr-4"><span>2</span></div>
                   <div>
-                    <h3>Nisi Sint Explicabo</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi id sint explicabo odit reiciendis eaque accusamus labore necessitatibus.</p>
+                    <h3>Transparent Operations</h3>
+                    <p>Every donation and project is tracked and reported, ensuring full accountability and trust with our supporters and partners.</p>
                   </div>
                 </div>
               </div>
@@ -239,8 +497,8 @@
                 <div class="feature-29012 d-flex">
                   <div class="number mr-4"><span>3</span></div>
                   <div>
-                    <h3>Accusamus Labore Necessitatibus</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi id sint explicabo odit reiciendis eaque accusamus labore necessitatibus.</p>
+                    <h3>Proven Impact</h3>
+                    <p>Our track record speaks for itself with thousands of trees planted and countless lives improved through our initiatives.</p>
                   </div>
                 </div>
               </div>
@@ -248,8 +506,8 @@
                 <div class="feature-29012 d-flex">
                   <div class="number mr-4"><span>4</span></div>
                   <div>
-                    <h3>Consectetur Dolor Elit</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi id sint explicabo odit reiciendis eaque accusamus labore necessitatibus.</p>
+                    <h3>Sustainable Approach</h3>
+                    <p>We focus on long-term solutions that create lasting change rather than temporary fixes to environmental challenges.</p>
                   </div>
                 </div>
               </div>
@@ -265,8 +523,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
             <div class="heading-20219 mb-5">
-              <span class="text-primary d-block mb-3">Our Recent Blog</span>
-              <h2 class="title text-cursive">Latest News from Our Blog</h2>
+              <span class="text-primary d-block mb-3" style="font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">Our Recent Blog</span>
+              <h2 class="title">Latest News from Our Blog</h2>
               <p class="text-muted mt-3">Stay updated with our latest stories, insights, and community achievements.</p>
             </div>
           </div>
@@ -358,7 +616,7 @@
     <div class="site-section">
       <div class="container">
         <div class="heading-20219 mb-5">
-          <h2 class="title text-cursive">Latest Event</h2>
+          <h2 class="title">Latest Event</h2>
         </div>
 
         <div class="row">
@@ -366,20 +624,17 @@
             <div class="event-29191 mb-5">
               <a href="#" class="d-block mb-3"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Image" class="img-fluid rounded"></a>
               <div class="px-3 d-flex">
-
                 <div class="bg-primary p-3 d-inline-block text-center rounded mr-4 date">
                   <span class="text-white h3 m-0 d-block">22</span>
                   <span class="text-white small">Oct 2023</span>
                 </div>
-
                 <div>
                   <div class="mb-3">
-                    <span class="mr-3"> <span class="icon-clock-o mr-2 text-muted"></span>9:30 AM &mdash; 11:30 AM</span>
+                    <span class="mr-3"> <span class="icon-clock-o mr-2 text-muted"></span>9:30 AM — 11:30 AM</span>
                     <span> <span class="icon-room mr-2 text-muted"></span>Ghana Africa</span>
                   </div>
                   <h3><a href="single.html">Community Health Fair: Bringing Wellness to Everyone</a></h3>
                 </div>
-
               </div>
             </div>
           </div>
@@ -387,20 +642,17 @@
             <div class="event-29191 mb-5">
               <a href="#" class="d-block mb-3"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Image" class="img-fluid rounded"></a>
               <div class="px-3 d-flex">
-
                 <div class="bg-primary p-3 d-inline-block text-center rounded mr-4 date">
                   <span class="text-white h3 m-0 d-block">28</span>
                   <span class="text-white small">Oct 2023</span>
                 </div>
-
                 <div>
                   <div class="mb-3">
-                    <span class="mr-3"> <span class="icon-clock-o mr-2 text-muted"></span>2:00 PM &mdash; 5:00 PM</span>
+                    <span class="mr-3"> <span class="icon-clock-o mr-2 text-muted"></span>2:00 PM — 5:00 PM</span>
                     <span> <span class="icon-room mr-2 text-muted"></span>Nairobi Kenya</span>
                   </div>
                   <h3><a href="single.html">Fundraising Gala: Supporting Education Initiatives</a></h3>
                 </div>
-
               </div>
             </div>
           </div>
@@ -416,7 +668,7 @@
           </div>
           <div class="col-md-6">
             <div class="bg-white h-100 p-4 shadow">
-              <h3 class="mb-4 text-cursive">Donate Now</h3>
+              <h3 class="mb-4" style="font-weight: 700;">Donate Now</h3>
               <form action="#">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Name">
@@ -441,7 +693,7 @@
       <div class="container">
         <div class="d-md-flex cta-20101 align-self-center bg-light p-5">
           <div class="">
-            <h2 class="text-cursive">Helping the enviroment to help us</h2>
+            <h2 style="font-weight: 700;">Helping the environment to help us</h2>
           </div>
           <div class="ml-auto"><a href="#" class="btn btn-primary">Donate Now</a></div>
         </div>
@@ -455,7 +707,7 @@
             <div class="row">
               <div class="col-md-7">
                 <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem modi, quaerat laborum id fugit blanditiis ratione delectus assumenda.</p>
+                <p>We are dedicated to environmental conservation and building sustainable communities through action and education.</p>
               </div>
               <div class="col-md-4 ml-auto">
                 <h2 class="footer-heading mb-4">Features</h2>
@@ -494,7 +746,7 @@
             <div class="pt-5">
               <p>
                 Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved 
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
               </p>
             </div>
           </div>
@@ -503,9 +755,7 @@
     </footer>
 
   </div>
-  </div> <!-- end site-wrap -->
 
-  <!-- JS FILES -->
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.0.js"></script>
   <script src="js/popper.min.js"></script>
@@ -552,5 +802,3 @@
 
 </body>
 </html>
-
-

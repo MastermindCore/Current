@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Downloads - Environment Committee Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Professional Font Styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .text-cursive {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 700;
+    }
+
+    /* Hero Section for Downloads Page */
+    .downloads-hero {
+      background: linear-gradient(rgba(188, 234, 6, 0.85), rgba(58, 231, 6, 0.9)), url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 150px 0 100px;
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    .downloads-hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .downloads-hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+
+    /* Download Cards */
+    .download-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+      height: 100%;
+      border: 1px solid #eaeaea;
+    }
+
+    .download-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .download-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 12px;
+      background: #007bff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px auto 20px;
+      color: white;
+      font-size: 30px;
+      box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+    }
+
+    .download-content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .download-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .download-content p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .download-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .file-size {
+      color: #666;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .file-type {
+      background: #f8f9fa;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #007bff;
+      text-transform: uppercase;
+    }
+
+    /* Download Buttons */
+    .btn-download {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background-color: #007bff;
+      border-color: #007bff;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-download:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      color: white;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-download-outline {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 2px solid #007bff;
+      color: #007bff;
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-download-outline:hover {
+      background: #007bff;
+      color: white;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* Categories */
+    .category-filter {
+      margin-bottom: 40px;
+    }
+
+    .category-btn {
+      padding: 10px 25px;
+      border: 2px solid #eaeaea;
+      background: white;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #666;
+      transition: all 0.3s ease;
+      margin: 0 5px 10px;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
+    /* Stats Section */
+    .counter {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      color: #007bff;
+    }
+
+    /* Navigation */
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    /* Headings */
+    .heading-20219 .title {
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    /* Featured Resources */
+    .featured-resource {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      border-radius: 16px;
+      padding: 50px;
+      color: white;
+      margin-bottom: 60px;
+    }
+
+    .featured-resource h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .featured-resource p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    /* Resource Categories */
+    .resource-category {
+      margin-bottom: 50px;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .category-header h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #222;
+      margin: 0;
+    }
+
+    .category-count {
+      background: #007bff;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* Footer Styling */
+    .site-footer {
+      background: #f8f9fa;
+      padding-top: 60px;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar site-navbar-target bg-secondary shadow" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          <div class="site-logo">
+            <a href="index.html" class="text-white">Environment Committee Project</a>
+          </div>
+
+          <nav class="site-navigation text-left ml-auto" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link">About Us</a></li>
+              <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+              <li><a href="blog.html" class="nav-link">Blog</a></li>
+              <li class="active"><a href="downloads.html" class="nav-link">Downloads</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="ml-auto toggle-button d-inline-block d-lg-none">
+            <a href="#" class="site-menu-toggle py-5 js-menu-toggle text-white">
+              <span class="icon-menu h3 text-white"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Downloads Hero Section -->
+    <section class="downloads-hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h1>Download Resources</h1>
+            <p>Access our collection of free resources, guides, reports, and educational materials to support your environmental initiatives and community projects.</p>
+            <div class="mt-4">
+              <a href="#resources" class="btn btn-light py-3 px-5 rounded mr-3">Browse Resources</a>
+              <a href="#featured" class="btn btn-outline-light py-3 px-5 rounded">Featured Downloads</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Resource Section -->
+    <section id="featured" class="site-section">
+      <div class="container">
+        <div class="featured-resource">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2>2023 Annual Sustainability Report</h2>
+              <p>Our comprehensive report detailing the impact of our environmental initiatives, community projects, and sustainability efforts throughout the year. Includes data, case studies, and future plans.</p>
+              <a href="#" class="btn btn-light btn-download py-3 px-5">
+                <i class="icon-download mr-2"></i>Download Full Report (PDF, 8.5MB)
+              </a>
+            </div>
+            <div class="col-lg-4 text-center">
+              <div class="download-icon">
+                <i class="icon-file-pdf"></i>
+              </div>
+              <div class="mt-3">
+                <span class="file-type">PDF</span>
+                <span class="file-size ml-3">8.5 MB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Categories -->
+    <section id="resources" class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <div class="heading-20219 mb-4">
+              <h2 class="title">Browse by Category</h2>
+              <p class="text-muted">Find exactly what you need by exploring our organized resource categories</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-filter text-center">
+          <button class="category-btn active" data-filter="all">All Resources</button>
+          <button class="category-btn" data-filter="reports">Reports</button>
+          <button class="category-btn" data-filter="guides">Guides</button>
+          <button class="category-btn" data-filter="templates">Templates</button>
+          <button class="category-btn" data-filter="education">Educational</button>
+          <button class="category-btn" data-filter="research">Research</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reports Category -->
+    <section class="site-section resource-category">
+      <div class="container">
+        <div class="category-header">
+          <h3>Reports & Publications</h3>
+          <span class="category-count">8 Files</span>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="reports">
+              <div class="download-icon">
+                <i class="icon-file-pdf"></i>
+              </div>
+              <div class="download-content">
+                <h3>Quarterly Impact Report Q3 2023</h3>
+                <p>Detailed analysis of our environmental impact, community engagement, and project milestones for the third quarter of 2023.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 4.2 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="reports">
+              <div class="download-icon">
+                <i class="icon-file-pdf"></i>
+              </div>
+              <div class="download-content">
+                <h3>Community Health Assessment</h3>
+                <p>Comprehensive assessment of community health initiatives and their impact on local populations.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 3.8 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="reports">
+              <div class="download-icon">
+                <i class="icon-file-pdf"></i>
+              </div>
+              <div class="download-content">
+                <h3>Environmental Audit Results</h3>
+                <p>Results from our annual environmental audit covering waste management, energy usage, and sustainability metrics.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 5.1 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guides Category -->
+    <section class="site-section resource-category bg-light">
+      <div class="container">
+        <div class="category-header">
+          <h3>Guides & Toolkits</h3>
+          <span class="category-count">6 Files</span>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="guides">
+              <div class="download-icon">
+                <i class="icon-book"></i>
+              </div>
+              <div class="download-content">
+                <h3>Community Garden Toolkit</h3>
+                <p>Step-by-step guide to starting and maintaining a community garden, including planning templates and maintenance schedules.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 2.4 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="guides">
+              <div class="download-icon">
+                <i class="icon-book"></i>
+              </div>
+              <div class="download-content">
+                <h3>Waste Management Guide</h3>
+                <p>Practical guide to implementing effective waste management systems in communities and organizations.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 3.1 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="guides">
+              <div class="download-icon">
+                <i class="icon-book"></i>
+              </div>
+              <div class="download-content">
+                <h3>Volunteer Training Manual</h3>
+                <p>Comprehensive manual for training volunteers in environmental conservation and community engagement.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 4.5 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Templates Category -->
+    <section class="site-section resource-category">
+      <div class="container">
+        <div class="category-header">
+          <h3>Templates & Forms</h3>
+          <span class="category-count">5 Files</span>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="templates">
+              <div class="download-icon">
+                <i class="icon-clipboard"></i>
+              </div>
+              <div class="download-content">
+                <h3>Project Proposal Template</h3>
+                <p>Professional template for writing environmental project proposals with all necessary sections and guidelines.</p>
+                <div class="download-meta">
+                  <span class="file-size">DOCX • 1.2 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="templates">
+              <div class="download-icon">
+                <i class="icon-clipboard"></i>
+              </div>
+              <div class="download-content">
+                <h3>Event Planning Checklist</h3>
+                <p>Comprehensive checklist for planning and executing environmental awareness events and community activities.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 0.8 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="templates">
+              <div class="download-icon">
+                <i class="icon-clipboard"></i>
+              </div>
+              <div class="download-content">
+                <h3>Impact Assessment Forms</h3>
+                <p>Standardized forms for assessing and documenting the impact of environmental projects and initiatives.</p>
+                <div class="download-meta">
+                  <span class="file-size">DOCX • 1.5 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Materials -->
+    <section class="site-section resource-category bg-light">
+      <div class="container">
+        <div class="category-header">
+          <h3>Educational Materials</h3>
+          <span class="category-count">7 Files</span>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="education">
+              <div class="download-icon">
+                <i class="icon-graduation-cap"></i>
+              </div>
+              <div class="download-content">
+                <h3>Environmental Awareness Posters</h3>
+                <p>Set of 10 high-quality printable posters for raising environmental awareness in schools and communities.</p>
+                <div class="download-meta">
+                  <span class="file-size">ZIP • 12.5 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="education">
+              <div class="download-icon">
+                <i class="icon-graduation-cap"></i>
+              </div>
+              <div class="download-content">
+                <h3>Kids Activity Book</h3>
+                <p>Fun and educational activity book for children aged 6-12, teaching environmental concepts through games and puzzles.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 6.3 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="download-card" data-category="education">
+              <div class="download-icon">
+                <i class="icon-graduation-cap"></i>
+              </div>
+              <div class="download-content">
+                <h3>Sustainability Curriculum</h3>
+                <p>Complete curriculum for teaching sustainability in schools, including lesson plans and student activities.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 7.8 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Papers -->
+    <section class="site-section resource-category">
+      <div class="container">
+        <div class="category-header">
+          <h3>Research Papers & Studies</h3>
+          <span class="category-count">4 Files</span>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="download-card" data-category="research">
+              <div class="download-icon">
+                <i class="icon-search"></i>
+              </div>
+              <div class="download-content">
+                <h3>Impact of Community Gardens on Food Security</h3>
+                <p>Research study examining how community gardening initiatives contribute to food security in urban areas.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 3.9 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 mb-4">
+            <div class="download-card" data-category="research">
+              <div class="download-icon">
+                <i class="icon-search"></i>
+              </div>
+              <div class="download-content">
+                <h3>Sustainable Agriculture Practices Study</h3>
+                <p>Comprehensive study on the effectiveness of various sustainable agriculture practices in different regions.</p>
+                <div class="download-meta">
+                  <span class="file-size">PDF • 4.7 MB</span>
+                  <a href="#" class="btn-download-outline">
+                    <i class="icon-download mr-2"></i>Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="site-section bg-primary">
+      <div class="container">
+        <div class="row mb-5 text-center">
+          <div class="col-md-12">
+            <div class="heading-20219">
+              <h2 class="title text-white">Downloads Statistics</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-3 col-6 mb-4 text-center">
+            <h2 class="counter text-white" data-count="2450">0</h2>
+            <p class="text-white" style="font-weight: 500;">Total Downloads</p>
+          </div>
+
+          <div class="col-md-3 col-6 mb-4 text-center">
+            <h2 class="counter text-white" data-count="30">0</h2>
+            <p class="text-white" style="font-weight: 500;">Resources Available</p>
+          </div>
+
+          <div class="col-md-3 col-6 mb-4 text-center">
+            <h2 class="counter text-white" data-count="150">0</h2>
+            <p class="text-white" style="font-weight: 500;">Countries Reached</p>
+          </div>
+
+          <div class="col-md-3 col-6 mb-4 text-center">
+            <h2 class="counter text-white" data-count="98">0</h2>
+            <p class="text-white" style="font-weight: 500;">% Free Resources</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="heading-20219 mb-5">
+              <h2 class="title">Stay Updated</h2>
+              <p class="text-muted mt-3">Subscribe to our newsletter to receive notifications about new resources, updates, and featured downloads.</p>
+            </div>
+            
+            <form class="newsletter-form">
+              <div class="row">
+                <div class="col-md-8 mb-3">
+                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email address">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Subscribe</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-7">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p>We are dedicated to environmental conservation and building sustainable communities through action and education.</p>
+              </div>
+              <div class="col-md-4 ml-auto">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="downloads.html">Downloads</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ml-auto">
+            <div class="mb-5">
+              <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+              <form action="#" method="post" class="footer-suscribe-form">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <h2 class="footer-heading mb-4">Follow Us</h2>
+            <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="pt-5">
+              <p>
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.0.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Filtering and Counter Animation -->
+  <script>
+    // Category filtering
+    document.addEventListener('DOMContentLoaded', function() {
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      const downloadCards = document.querySelectorAll('.download-card');
+      
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove active class from all buttons
+          categoryBtns.forEach(b => b.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Show/hide cards based on filter
+          downloadCards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = 'block';
+            } else {
+              if (card.getAttribute('data-category') === filter) {
+                card.style.display = 'block';
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+
+    // Counter animation for statistics
+    function animateCounter(counter) {
+      const target = +counter.getAttribute("data-count");
+      const speed = 400;
+      const increment = target / speed;
+
+      const update = () => {
+        let current = +counter.innerText;
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    }
+
+    const counters = document.querySelectorAll(".counter");
+    let triggered = false;
+
+    window.addEventListener("scroll", () => {
+      const statsSection = document.querySelector('.bg-primary');
+      if (!triggered && statsSection.getBoundingClientRect().top < window.innerHeight - 150) {
+        counters.forEach(c => animateCounter(c));
+        triggered = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
